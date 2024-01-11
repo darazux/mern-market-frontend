@@ -47,6 +47,7 @@ const Register = () => {
           type="text"
           name="email"
           placeholder="メールアドレス"
+          required
         />
         <input
           value={password}
