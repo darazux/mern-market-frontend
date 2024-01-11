@@ -3,9 +3,17 @@
 import { useState } from 'react';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [loginUser, setLoginUser] = useState({
+    email: '',
+    password: '',
+  });
   const base_url = process.env.REACT_APP_API_URL;
+  const handleChange = (e) => {
+    setLoginUser({
+      ...loginUser,
+      [e.target.name]: e.target.value,
+    });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -15,10 +23,7 @@ const Login = () => {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
+        body: JSON.stringify(loginUser),
       });
       const jsonResp = await resp.json();
       const token = jsonResp.token;
@@ -34,15 +39,16 @@ const Login = () => {
       <h1>ログインページ</h1>
       <form onSubmit={handleSubmit}>
         <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={loginUser.email}
+          onChange={handleChange}
           type="text"
           name="email"
           placeholder="メールアドレス"
+          required
         />
         <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={loginUser.password}
+          onChange={handleChange}
           type="text"
           name="password"
           placeholder="パスワード"
