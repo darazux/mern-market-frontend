@@ -31,7 +31,7 @@ const DeleteItem = () => {
       }
     };
     getSingleItem();
-  }, [params.id]);
+  }, [params.id, base_url]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

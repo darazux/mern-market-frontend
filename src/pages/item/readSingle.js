@@ -29,7 +29,7 @@ const ReadSingle = () => {
       }
     };
     getSingleItem();
-  }, [params.id]);
+  }, [params.id, base_url]);
   return (
     <div>
       <div>

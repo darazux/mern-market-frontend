@@ -16,7 +16,7 @@ const ReadAll = () => {
       }
     };
     getAllItems();
-  }, []);
+  }, [base_url]);
   return (
     <div>
       {allItems &&

@@ -31,7 +31,7 @@ const UpdateItem = () => {
       }
     };
     getSingleItem();
-  }, [params.id]);
+  }, [params.id, base_url]);
   const handleChange = (e) => {
     setUpdateItem({
       ...updateItem,
