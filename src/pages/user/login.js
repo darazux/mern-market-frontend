@@ -36,7 +36,7 @@ const Login = () => {
   };
   return (
     <div>
-      <h1>ログインページ</h1>
+      <h1 className="page-title">ログインページ</h1>
       <form onSubmit={handleSubmit}>
         <input
           value={loginUser.email}

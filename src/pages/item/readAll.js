@@ -19,15 +19,17 @@ const ReadAll = () => {
   }, [base_url]);
   return (
     <div>
-      {allItems &&
-        allItems.allItems.map((item) => (
-          <div key={item._id}>
-            <img src={item.image} alt="item" />
-            <h2>￥{Number(item.price).toLocaleString()}</h2>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </div>
-        ))}
+      <div className="grid-container-in">
+        {allItems &&
+          allItems.allItems.map((item) => (
+            <div key={item._id}>
+              <img src={item.image} alt="item" />
+              <h2>￥{Number(item.price).toLocaleString()}</h2>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };

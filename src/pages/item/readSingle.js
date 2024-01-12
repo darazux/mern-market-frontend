@@ -31,7 +31,7 @@ const ReadSingle = () => {
     getSingleItem();
   }, [params.id, base_url]);
   return (
-    <div>
+    <div className="grid-container-si">
       <div>
         {singleItem.image && <img src={singleItem.image} alt="singleItem" />}
       </div>
