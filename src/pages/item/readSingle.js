@@ -1,7 +1,7 @@
 // readSingle.js
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const ReadSingle = () => {
   const base_url = process.env.REACT_APP_API_URL;
@@ -40,6 +40,10 @@ const ReadSingle = () => {
         <h2>￥{Number(singleItem.price).toLocaleString()}</h2>
         <hr />
         <p>{singleItem.description}</p>
+        <div>
+          <Link to={`/item/update/${params.id}`}>アイテム編集</Link>
+          <Link to={`/item/delete/${params.id}`}>アイテム削除</Link>
+        </div>
       </div>
     </div>
   );
