@@ -1,6 +1,7 @@
 // readAll.js
 
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ReadAll = () => {
   const [allItems, setAllItems] = useState('');
@@ -22,12 +23,14 @@ const ReadAll = () => {
       <div className="grid-container-in">
         {allItems &&
           allItems.allItems.map((item) => (
-            <div key={item._id}>
+            <Link to={`/item/${item._id}`} key={item._id} className="card">
               <img src={item.image} alt="item" />
-              <h2>￥{Number(item.price).toLocaleString()}</h2>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
+              <div className="texts-area">
+                <h2>￥{Number(item.price).toLocaleString()}</h2>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </Link>
           ))}
       </div>
     </div>
