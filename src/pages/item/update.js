@@ -66,7 +66,6 @@ const UpdateItem = () => {
           name="title"
           placeholder="アイテム名"
           required
-          n
         />
         <input
           value={updateItem.price}
