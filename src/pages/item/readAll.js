@@ -28,7 +28,7 @@ const ReadAll = () => {
               <div className="texts-area">
                 <h2>￥{Number(item.price).toLocaleString()}</h2>
                 <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <p>{item.description.substring(0, 80)}...</p>
               </div>
             </Link>
           ))}
