@@ -1,5 +1,6 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import './App.css';
+import CreateItem from './pages/item/create';
 import ReadAll from './pages/item/readAll';
 import ReadSingle from './pages/item/readSingle';
 import Login from './pages/user/login';
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/user/login" element={<Login />} />
         <Route path="/" element={<ReadAll />} />
         <Route path="/item/:id" element={<ReadSingle />} />
+        <Route path="/item/create" element={<CreateItem />} />
       </Routes>
     </BrowserRouter>
   );
