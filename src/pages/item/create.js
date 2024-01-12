@@ -1,6 +1,7 @@
 // create.js
 
 import { useState } from 'react';
+import ImgInput from '../../components/imgInput';
 import useAuth from '../../utils/useAuth';
 
 const CreateItem = () => {
@@ -14,6 +15,12 @@ const CreateItem = () => {
     setNewItem({
       ...newItem,
       [e.target.name]: e.target.value,
+    });
+  };
+  const setImage = (data) => {
+    setNewItem({
+      ...newItem,
+      image: data,
     });
   };
   const base_url = process.env.REACT_APP_API_URL;
@@ -41,6 +48,7 @@ const CreateItem = () => {
     return (
       <div>
         <h1 className="page-title">アイテム作成</h1>
+        <ImgInput setImage={setImage} />
         <form onSubmit={handleSubmit}>
           <input
             value={newItem.title}
@@ -56,14 +64,6 @@ const CreateItem = () => {
             type="text"
             name="price"
             placeholder="価格"
-            required
-          />
-          <input
-            value={newItem.image}
-            onChange={handleChange}
-            type="text"
-            name="image"
-            placeholder="画像"
             required
           />
           <textarea
