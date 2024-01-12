@@ -3,9 +3,17 @@
 import { useState } from 'react';
 
 const Register = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [newUser, setNewUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+  const handleChange = (e) => {
+    setNewUser({
+      ...newUser,
+      [e.target.name]: e.target.value,
+    });
+  };
   const base_url = process.env.REACT_APP_API_URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,11 +24,7 @@ const Register = () => {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          password: password,
-        }),
+        body: JSON.stringify(newUser),
       });
       const jsonResp = await resp.json();
       alert(jsonResp.message);
@@ -34,24 +38,24 @@ const Register = () => {
       <h1>登録ページ</h1>
       <form onSubmit={handleSubmit}>
         <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={newUser.name}
+          onChange={handleChange}
           type="text"
           name="name"
           placeholder="名前"
           required
         />
         <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={newUser.email}
+          onChange={handleChange}
           type="text"
           name="email"
           placeholder="メールアドレス"
           required
         />
         <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={newUser.password}
+          onChange={handleChange}
           type="text"
           name="password"
           placeholder="パスワード"
