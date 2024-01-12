@@ -3,6 +3,7 @@ import './App.css';
 import CreateItem from './pages/item/create';
 import ReadAll from './pages/item/readAll';
 import ReadSingle from './pages/item/readSingle';
+import UpdateItem from './pages/item/update';
 import Login from './pages/user/login';
 import Register from './pages/user/register';
 
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<ReadAll />} />
         <Route path="/item/:id" element={<ReadSingle />} />
         <Route path="/item/create" element={<CreateItem />} />
+        <Route path="/item/update/:id" element={<UpdateItem />} />
       </Routes>
     </BrowserRouter>
   );
