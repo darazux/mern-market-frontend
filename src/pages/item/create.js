@@ -66,6 +66,14 @@ const CreateItem = () => {
             placeholder="価格"
             required
           />
+          <input
+            value={newItem.image}
+            onChange={handleChange}
+            type="text"
+            name="image"
+            placeholder="画像"
+            required
+          />
           <textarea
             value={newItem.description}
             onChange={handleChange}
