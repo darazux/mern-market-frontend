@@ -23,6 +23,7 @@ const App = () => {
           <Route path="/item/create" element={<CreateItem />} />
           <Route path="/item/update/:id" element={<UpdateItem />} />
           <Route path="/item/delete/:id" element={<DeleteItem />} />
+          <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
         <Footer />
       </div>
