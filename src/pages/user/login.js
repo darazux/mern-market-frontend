@@ -1,6 +1,6 @@
 // login.js
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Login = () => {
   const [loginUser, setLoginUser] = useState({
@@ -34,6 +34,9 @@ const Login = () => {
       alert('ログイン失敗');
     }
   };
+  useEffect(() => {
+    document.title = 'ログインページ';
+  }, []);
   return (
     <div>
       <h1 className="page-title">ログインページ</h1>

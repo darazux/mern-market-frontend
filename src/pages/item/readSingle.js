@@ -29,7 +29,8 @@ const ReadSingle = () => {
       }
     };
     getSingleItem();
-  }, [params.id, base_url]);
+    document.title = singleItem.title;
+  }, [params.id, base_url, document.title]);
   return (
     <div className="grid-container-si">
       <div>

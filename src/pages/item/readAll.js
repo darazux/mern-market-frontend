@@ -7,6 +7,7 @@ const ReadAll = () => {
   const [allItems, setAllItems] = useState('');
   const base_url = process.env.REACT_APP_API_URL;
   useEffect(() => {
+    document.title = 'MERN Market';
     const getAllItems = async () => {
       try {
         const resp = await fetch(`${base_url}`);

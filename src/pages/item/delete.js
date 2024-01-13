@@ -14,6 +14,7 @@ const DeleteItem = () => {
     description: '',
   });
   useEffect(() => {
+    document.title = 'アイテム削除';
     const getSingleItem = async () => {
       try {
         const resp = await fetch(`${base_url}item/${params.id}`);

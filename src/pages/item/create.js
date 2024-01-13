@@ -1,6 +1,6 @@
 // create.js
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ImgInput from '../../components/imgInput';
 import useAuth from '../../utils/useAuth';
 
@@ -43,6 +43,10 @@ const CreateItem = () => {
       alert('アイテム作成失敗');
     }
   };
+  useEffect(() => {
+    document.title = 'アイテム作成';
+  }, []);
+
   const loginUser = useAuth();
   if (loginUser) {
     return (

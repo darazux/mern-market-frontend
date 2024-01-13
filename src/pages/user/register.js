@@ -1,6 +1,6 @@
 // register.js
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Register = () => {
   const [newUser, setNewUser] = useState({
@@ -33,6 +33,9 @@ const Register = () => {
       alert('ユーザー登録失敗');
     }
   };
+  useEffect(() => {
+    document.title = 'ユーザー登録';
+  }, []);
   return (
     <div>
       <h1 className="page-title">ユーザー登録</h1>

@@ -14,6 +14,7 @@ const UpdateItem = () => {
     description: '',
   });
   useEffect(() => {
+    document.title = 'アイテム編集';
     const getSingleItem = async () => {
       try {
         const resp = await fetch(`${base_url}item/${params.id}`);
